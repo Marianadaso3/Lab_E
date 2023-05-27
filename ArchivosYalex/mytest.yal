@@ -1,0 +1,12 @@
+let letter = ['A'-'Z''a'-'z']
+let digit = ['0'-'9']
+let id = letter(letter|digit)*
+let numbers = digit*
+
+rule tokens = 
+  | id        { return ID }               (* Cambie por una acción válida, que devuelva el token *)
+  | numbers     { return NUMBER}
+  | '+'       { return PLUS }
+  | '*'       { return TIMES }
+  | '('       { return LPAREN }
+  | ')'       { return RPAREN }

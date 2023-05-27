@@ -1,0 +1,70 @@
+digraph {
+	I0 [label="W' :  • expression ;
+expression :  • expression PLUS term ;
+expression :  • term ;
+term :  • term TIMES factor ;
+term :  • factor ;
+factor :  • LPAREN expression RPAREN ;
+factor :  • ID ;
+"]
+	I1 [label="W' : •;
+expression : expression • PLUS term ;
+"]
+	I2 [label="expression : • • ;
+term : term • TIMES factor ;
+"]
+	I3 [label="term : • • ;
+"]
+	I4 [label="factor : LPAREN • expression RPAREN ;
+expression :  • expression PLUS term ;
+expression :  • term ;
+term :  • term TIMES factor ;
+term :  • factor ;
+factor :  • LPAREN expression RPAREN ;
+factor :  • ID ;
+"]
+	I5 [label="factor : • • ;
+"]
+	I6 [label="expression : expression PLUS • term ;
+term :  • term TIMES factor ;
+term :  • factor ;
+factor :  • LPAREN expression RPAREN ;
+factor :  • ID ;
+"]
+	I7 [label="term : term TIMES • factor ;
+factor :  • LPAREN expression RPAREN ;
+factor :  • ID ;
+"]
+	I8 [label="factor : LPAREN expression • RPAREN ;
+expression : expression • PLUS term ;
+"]
+	I9 [label="expression : • • ;
+term : term • TIMES factor ;
+"]
+	I10 [label="term : • • ;
+"]
+	I11 [label="factor : • • ;
+"]
+	I0 -> I1 [label=expression]
+	I0 -> I2 [label=term]
+	I0 -> I3 [label=factor]
+	I0 -> I4 [label=LPAREN]
+	I0 -> I5 [label=ID]
+	I1 -> I6 [label=PLUS]
+	I2 -> I7 [label=TIMES]
+	I4 -> I8 [label=expression]
+	I4 -> I2 [label=term]
+	I4 -> I3 [label=factor]
+	I4 -> I4 [label=LPAREN]
+	I4 -> I5 [label=ID]
+	I6 -> I9 [label=term]
+	I6 -> I3 [label=factor]
+	I6 -> I4 [label=LPAREN]
+	I6 -> I5 [label=ID]
+	I7 -> I10 [label=factor]
+	I7 -> I4 [label=LPAREN]
+	I7 -> I5 [label=ID]
+	I8 -> I11 [label=RPAREN]
+	I8 -> I6 [label=PLUS]
+	I9 -> I7 [label=TIMES]
+}

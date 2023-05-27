@@ -13,7 +13,7 @@ if __name__ == '__main__':  # Comienzo del programa principal
     #y = Yalex()
     # Se lee un archivo yalex y se carga en la instancia de Yalex
     #y.leerYalex('ArchivosYalex/slr-1.yal')
-    content = getContentFromFile('ArchivosYalp/slr-4.yalp')  # Obtener contenido del archivo y guardarlo en la variable content
+    content = getContentFromFile('ArchivosYalp/slr-1.yalp')  # Obtener contenido del archivo y guardarlo en la variable content
     tokens, derivations, comments = separateContent(content)  # Separar el contenido en tokens, derivaciones y comentarios
     formattedDerivations = formatDerivations(derivations)  # Formatear las derivaciones
     analizadorSintactico = AnalizadorSintactico(tokens, formattedDerivations)  # Crear una instancia de la clase AnalizadorSintactico
